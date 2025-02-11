@@ -1,15 +1,9 @@
 import multiplicar from "./multiplicar.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + multiplicar(firstNumber, secondNumber) + "</p>";
+describe("Multiplicar", () => {
+  it("debería multiplicar dos números", () => {
+    expect(multiplicar(3, 2)).toEqual(6);
+    expect(multiplicar(-1, 5)).toEqual(-5);
+    expect(multiplicar(0, 10)).toEqual(0);
+  });
 });
